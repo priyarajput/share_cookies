@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>QueryBuilder</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body onload="myFunction()">
+  <iframe id="myFrame" src="/default.asp"></iframe>
+  <p id="demo"></p>
+
+  <script>
+    function myFunction() {
+      setCookies(window.location.href);
+      document.getElementById("demo").innerHTML = "Iframe is loaded.";
+    }
+    function setCookies(url) {
+      console.log("url");
+      let params = url.split('?');
+      const str = new URLSearchParams(params[1]);
+      let paramObj = {};
+      for (let value of str.keys()) {
+        paramObj[value] = str.get(value);
+        let cookieName = value;
+        let cookieValue = str.get(value);
+        let myDate = new Date();
+        myDate.setMonth(myDate.getMonth() + 12);
+        document.cookie = cookieName + "=" + cookieValue + ";expires=" + myDate
+          + ";domain=;path=/";
+      }
+      // console.log("paramObj", paramObj)
+    }
+  </script>
+
+  <app-root></app-root>
+  <script src="runtime-es2015.js" type="module"></script>
+  <script src="runtime-es5.js" nomodule defer></script>
+  <script src="polyfills-es5.js" nomodule defer></script>
+  <script src="polyfills-es2015.js" type="module"></script>
+  <script src="styles-es2015.js" type="module"></script>
+  <script src="styles-es5.js" nomodule defer></script>
+  <script src="vendor-es2015.js" type="module"></script>
+  <script src="vendor-es5.js" nomodule defer></script>
+  <script src="main-es2015.js" type="module"></script>
+  <script src="main-es5.js" nomodule defer></script>
+</body>
+
+</html>

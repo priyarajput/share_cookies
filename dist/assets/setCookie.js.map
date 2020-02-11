@@ -1,0 +1,1 @@
+{"version":3,"sources":["setCookie.js"],"names":["console","log","setCookie"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,IAAZ,EAEA,QAASC,CAAAA,SAAT,EAAqB,CACjB;AACH,CAEDA,SAAS","sourcesContent":["console.log(\"??\")\n\nfunction setCookie() {\n    // document.cookie = \"user=MyCookie\", \"subinsb.com\", time() + 3600;\n}\n\nsetCookie();"]}
